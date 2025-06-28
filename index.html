@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solstitheo Archives</title>
+    <meta property="og:url" content="index.html">    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solstitheo Archives" />
+    <meta property="og:description" content="Welcome to Immortal City of Edelith" />  
+    <meta property="og:image" content="assets/img/favicon.png">
+    <link rel="stylesheet" id="themeStylesheetLink" href="css/themes/default.css">
+    <link rel="stylesheet" href="css/homestyle.css">
+    <script src="../kit.fontawesome.com/59604fa9da.js" crossorigin="anonymous"></script>
+    <script src="scripts/navbar.js" type="text/javascript" defer></script>
+    <script src="scripts/juicebar.js" type="text/javascript" defer></script>
+    <script src="scripts/footer.js" type="text/javascript" defer></script>
+    <script src="scripts/randomizer.js" type="text/javascript" defer></script>
+</head>
+<body>
+
+<script>
+/*
+      <>=======() 
+      (/\___   /|\\          ()==========<>_
+            \_/ | \\        //|\   ______/ \)
+              \_|  \\      // | \_/
+                \|\/|\_   //  /\/
+                 (oo)\ \_//  /
+                //_/\_\/ /  |
+               @@/  |=\  \  |
+                    \_=\_ \ |
+                      \==\ \|\_ snd
+                   __(\===\(  )\
+                  (((~) __(_/   |
+                       (((~) \  /
+                       ______/ /
+                       '------'
+*/
+</script>
+
+<div class="wrapper">
+    <nav-block></nav-block>
+    <div class="header">
+    </div>
+    
+    <juice-block></juice-block>  
+    <div class="wrapper-2">
+        <div class="main">
+            <div class="box about">
+                <h1>The Solstitheo Archives</h1>
+                    <img id="hawktuah" src="assets/img/homepage/hawk_tuah.png" style="float: right; margin-top: -85px; margin-left: 12px; width: 200px; transition: transform 0.1s ease;"> 
+
+                        <audio id="tuah" src="https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/finding-korok.mp3"></audio>
+                        <audio id="tuah-rare1" src="https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/awww.mp3"></audio>
+                        <audio id="tuah-rare2" src="https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/yay.mp3"></audio>
+                        
+                        <script>
+                          const img = document.getElementById("hawktuah");
+                          const mainAudio = document.getElementById("tuah");
+                          const rare1 = document.getElementById("tuah-rare1");
+                          const rare2 = document.getElementById("tuah-rare2");
+                        
+                          let cooldown = false;
+                        
+                          function playTuah() {
+                            if (cooldown) return;
+                        
+                            cooldown = true;
+                            setTimeout(() => cooldown = false, 1000); // 1 second cooldown
+                        
+                            // Click bounce animation
+                            img.style.transform = "scale(1.1)";
+                            setTimeout(() => {
+                              img.style.transform = "scale(1)";
+                            }, 100);
+                        
+                            // Rare sound logic
+                            const roll = Math.random();
+                            let chosen;
+                        
+                            if (roll < 0.05) {
+                              chosen = rare1;
+                            } else if (roll < 0.10) {
+                              chosen = rare2;
+                            } else {
+                              chosen = mainAudio;
+                            }
+                        
+                            chosen.volume = 0.25;
+                            chosen.currentTime = 0;
+                            chosen.play();
+                          }
+                        
+                          img.addEventListener('click', playTuah);
+                        </script>
+
+
+
+                <p><b class="text-primary">Solstitheo Archives </b>is a fan project that documents the Original DnD Story "The Immortal City of Edelith" created by Horkah. This Website seeks to contain all the lore, information and other random things for safekeeping, notes and just to show that we all did something together.</p>
+                <p>Please enjoy your stay!</p>
+            </div>
+            <div class="homenav">
+                <a href="/quill-and-terms.html"><div class="homenav-button" style="background-image: url(assets/img/homepage/aboutbutton.png);"></div><span class="homenav-label">Quill & Terms</span></a>
+                    <div class="chunk bg-primary"></div>
+                <a href="characters/index.html"><div class="homenav-button" style="background-image: url(assets/img/homepage/ocsbutton.png);"></div><span class="homenav-label">Characters</span></a>
+                    <div class="chunk bg-secondary"></div>
+                <a href="/recap.html"><div class="homenav-button" style="background-image: url(assets/img/homepage/worldsbutton.png);"></div><span class="homenav-label">Recap</span></a>
+                    <div class="chunk bg-primary"></div>
+                <a href="/fun-fact-friday.html"><div class="homenav-button" style="background-image: url(assets/img/homepage/ttrpgbutton.png); background-size: 67px;"></div><span class="homenav-label">Edelith Fun Fact Friday</span></a>
+                    <div class="chunk bg-secondary"></div>
+                <a href="beastiary.html"><div class="homenav-button" style="background-image: url(assets/img/homepage/beastiarybutton.png);"></div><span class="homenav-label">Beastiary</span></a>
+                  <div class="chunk bg-primary"></div>
+                <a href="regions.html"><div class="homenav-button" style="background-image: url(assets/img/homepage/mapbutton.png);"></div><span class="homenav-label">Regions</span></a>  
+             </div>
+            <div class="griddy">
+
+                <div class="newsletter">
+                    <h2>Session Recap</h2>
+                    <div class="box">
+                    <div class="line-dot"></div>
+                    <img src="assets/img/recap/birthdaybiblio.png" style="width: 150px; float: right; margin-top: -4px;"> 
+                        <p>Gambling. Gambling. Gamling. The group all use the funds they gained after Peggle's drinking contest to triple their money. Peggle met a tall Goliath baddy who he wanted to gamble to impress, while Herb discovered the truth of his kind–The Woodsworn–Who were betrayed by their own kind, a traitor named Rotcio who sold out his entire kind, allowing them to be supctebible to the corrosion in return for immortality. Ringo, a fellow Woodsworn, explained all this to Herb. The group continued to gamble before heading towards the mountains, seeking shelter in a cave.</p>
+                        
+                        <p>Was that too much?</p>
+                        <div class="newsletter-updates">
+                            <h3>So Basically...</h3>
+                            <div class="newsletter-updates-scroll" style="overflow-y: hidden;">
+                                <ul class="fa-ul">
+                                    <li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Gambling.</li>
+                                    <li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Gambling.</li>
+                                    <li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Oh yeah also did I mention Gambling.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="line-dot" style="margin-top: 7px; margin-bottom: 3px;"></div>
+                        <div class="newsletter-links">
+                            <a href="recap.html">Full Recap and Archive <i class="fa-solid fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="fotm">
+                <h2>Edelith Fun Fact Friday</h2>
+                <div class="box">
+                <div class="line-dot"></div>
+                <h3>The Woodsworn</h3>
+                <p>After an extensive study and round of questioning of the New Arvegum citizens, I am confident in publishing my findings about this new construct legion. I have dubbed them, “The Woodsworn.” Identifiable by their humanoid appearance, wooden plating, and mask-like face, this “race” of beings is almost exclusive to New Arvegum. Their origins are questionable at best, however it is safe to say that these constructs emigrated into Edelith sometime after the Wake of Steel.</p>
+
+                <div class="line-dot" style="margin-top: 0px; margin-bottom: 3px;"></div>
+                <div class="fotm-links">
+                    <a href="fun-fact-friday.html">Continue reading...<i class="fa-solid fa-caret-right"></i></a>
+                </div>
+                
+                </div>
+                </div> 
+
+                <div class="guestbook">
+                    <div class="box">
+                        <a href="https://a.co/d/1AJUVRl">
+                            <div class="imsotireddawg">
+                                <div class="bookimg"></div>
+                                <div class="peek"></div>
+                            </div>
+                            <span class="signmypages">Solstitheian almanac out now!</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sidebar-right">
+            <div class="featured-title">
+                <h3>MVP of the Session</h3>
+            </div>
+            <div class="box featured">
+                <img src="assets/img/placeholderavi.png">
+                <a href="characters/index.html" style="margin-top: 5px">Eight Nanako</a>
+                <p>For absolutly desimating the demons with a single spell.</p>
+            </div>
+            <div class="box random">
+                <h2>Random Character</h2>
+                <div id="randomizer"></div>
+                <button id="dice" onclick="randomCharacter()"><i class="fa-solid fa-dice"></i></button>
+            </div>
+          
+            
+        </div>
+
+        <div class="sidebar-left">
+            <div class="log-title">
+                <h2>EdelPost</h2>
+                <a href="/feed.xml" class="rss-link"><img src="assets/img/homepage/tomestoneofsyndication.png"></a>
+                <img src="assets/img/homepage/mogmail.gif" class="edelpost">
+            </div>
+            <div class="box updates">
+                <script src="//rss.bloople.net/?url=https%3A%2F%2Fsolstitheo.neocities.org%2Ffeed.xml&showtitle=false&type=js"></script>
+            </div>
+
+            <div class="talksprite">
+              <div class="talkin">-------</div>
+              <div class="biblio"></div>
+            
+              <img src="assets/img/homepage/booglenose.png" class="quilliam" value="quilliam" onclick="squeak();">
+            
+            
+            <script>
+              const korokSounds = [
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-yahaha.mp3",
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-question1.mp3",
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-run1.mp3",
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-hurt1.mp3",
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-hurt2.mp3",
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-question2.mp3",
+                "https://file.garden/aE4BmvQeoiKwc59V/sound%20effects/korok-runaway2.mp3"
+              ];
+            
+              function squeak() {
+                const randomIndex = Math.floor(Math.random() * korokSounds.length);
+                const audio = new Audio(korokSounds[randomIndex]);
+                audio.volume = 0.45;
+                audio.play();
+              }
+            </script>
+
+              
+            </div>
+
+            <div class="status">
+                <div id="statuscafe">
+                    <div id="statuscafe-username"></div>
+                    <div id="statuscafe-content"></div>
+                </div><script src="https://status.cafe/current-status.js?name=cyncl" defer></script>
+            </div>
+        
+    </div>
+    <br>
+    <footer-block></footer-block>
+</div>
+
+<script>
+    var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      var player;
+      function onYouTubePlayerAPIReady() {
+      player = new YT.Player('checky', {
+      events: {
+      'onReady': onPlayerReady
+       }
+       });
+       }
+       function onPlayerReady(event) {
+       player.setVolume(25);
+       }
+</script>
+<!-- Add this script somewhere in your HTML (before closing </body> is good) -->
+<script>
+  // Secret click sequence tracker
+  const secretSequence = {
+    targetSequence: ['hawktuah', 'hawktuah', 'talksprite', 'hawktuah', 'guestbook'],
+    currentSequence: [],
+    secretLink: 'https://solstitheo.neocities.org/How-did-you-get-here/l'
+  };
+
+  // Track hawktuah clicks
+  document.getElementById('hawktuah').addEventListener('click', function() {
+    secretSequence.currentSequence.push('hawktuah');
+    checkSequence();
+  });
+
+  // Track talksprite clicks (assuming this is the quilliam image)
+  document.querySelector('.quilliam').addEventListener('click', function() {
+    secretSequence.currentSequence.push('talksprite');
+    checkSequence();
+  });
+
+  // Modify guestbook click handler
+  const guestbookLink = document.querySelector('.guestbook a');
+  const originalLink = guestbookLink.href;
+  
+  guestbookLink.addEventListener('click', function(e) {
+    secretSequence.currentSequence.push('guestbook');
+    if (checkSequence()) {
+      e.preventDefault();
+      window.location.href = secretSequence.secretLink;
+    }
+  });
+
+  function checkSequence() {
+    // If sequence gets too long, reset it
+    if (secretSequence.currentSequence.length > secretSequence.targetSequence.length) {
+      secretSequence.currentSequence = [];
+      return false;
+    }
+    
+    // Check if current sequence matches target
+    for (let i = 0; i < secretSequence.currentSequence.length; i++) {
+      if (secretSequence.currentSequence[i] !== secretSequence.targetSequence[i]) {
+        // Reset if any part doesn't match
+        secretSequence.currentSequence = [];
+        return false;
+      }
+    }
+    
+    // If full sequence matches
+    if (secretSequence.currentSequence.length === secretSequence.targetSequence.length) {
+      secretSequence.currentSequence = []; // Reset for next time
+      return true;
+    }
+    
+    return false;
+  }
+</script>
+</div>
+</body>
+
+</html>
+
+<style>
+
+
+.about img {
+    width: 100px;
+    transition: ease-in 0.3s, ease-out 0.3s;
+}
+
+.about img:hover {
+    scale: 103%;
+}
+
+.newsletter h2::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    background-image: url(assets/img/newsletter/junefavicon.webp);
+}
+
+</style>
