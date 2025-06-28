@@ -1,0 +1,337 @@
+/* RESET CSS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABLES */
+:root {
+    --dark-color: rgb(2, 4, 8);
+    --dark-hover: rgba(255, 255, 255, 0.1);
+    --light-color: rgb(245, 245, 245);
+    --light-hover: rgba(0, 0, 0, 0.1);
+}
+
+/* GENERAL */
+body {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace, sans-serif;
+    font-size: 0.5rem;
+    transition: background-color 0.3s;
+    position: fixed;
+}
+
+body.dark-mode {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+body.dark-mode #toggle-mode-btn:hover {
+    background-color: var(--dark-hover);
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+input {
+    display: none;
+}
+
+/* MAIN BUTTONS */
+#toggle-mode-btn {
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+
+
+/* RESPONSIVE WARNING */
+#responsive-warning {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 9999;
+}
+
+.warning-icons {
+    font-size: 10rem;
+}
+
+@media (max-width: 768px) {
+    #responsive-warning.show {
+        display: flex;
+    }
+}
+
+/* FLIP BOOK - WIDER SIZE */
+#flip_book {
+    width: 800px;
+    height: 920px;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 2000px;
+    margin-top: 30px; /* Add this line to move the book down */
+    transform-style: preserve-3d;  
+}
+
+.front_cover,
+.back_cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 10px 10px 5px;
+    background-image: url(/assets/book/flip_book_edge_shading.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(220, 20, 60);
+    box-shadow: 0 0 5px 0 rgb(25, 25, 25, 0.25);
+    top: 30px;
+}
+
+.front_cover {
+    position: absolute;
+    cursor: pointer;
+    transform-origin: center left;
+    transition: transform 0.5s;
+    z-index: 99;
+}
+
+.front_cover label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.page {
+    width: 778px; /* Increased from 698px (matches new book width - 22px) */
+    height: 880px; /* Increased from 800px (matches new book height - 40px) */
+    position: absolute;
+    top: 50px;
+    left: 2px;
+    border-radius: 0 10px 10px 0;
+    background-color: white;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    transform: rotateY(0deg);
+    transition-duration: 0.5s;
+    
+    
+}
+
+.front_page,
+.back_page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back_page {
+  transform: rotateY(180deg);
+}
+
+.front_page label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+.back_page label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.edge_shading,
+.front_content,
+.back_content {
+    width: 778px;
+    height: 880px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.front_content {
+    border-radius: 0 10px 10px 0;
+    z-index: 97;
+}
+
+.back_content {
+    left: 1px;
+    border-radius: 10px 0 0 10px;
+    z-index: 97;
+}
+
+.back_cover {
+    position: relative;
+    z-index: -1;
+}
+
+/* PAGE ORDER */
+#page1 {
+    z-index: 8;
+}
+
+#page2 {
+    z-index: 5;
+}
+
+#page3 {
+    z-index: 4;
+}
+
+#page4 {
+    z-index: 3;
+}
+
+#page5 {
+    z-index: 2;
+}
+
+/* Update the transform position when cover is checked */
+#cover_checkbox:checked~#flip_book {
+    transform: translateX(400px); /* Half of new width (800px / 2) */
+}
+
+#cover_checkbox:checked~#flip_book .front_cover {
+    transform: rotateY(-180deg);
+    transition: transform 0.2s, z-index 0.2s 0.2s;
+    z-index: 1;
+}
+
+#cover_checkbox:checked~#flip_book #cover {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+}
+
+#page1_checkbox:checked~#flip_book #page1 {
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+
+#page2_checkbox:checked~#flip_book #page2 {
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+
+#page3_checkbox:checked~#flip_book #page3 {
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
+
+#page4_checkbox:checked~#flip_book #page4 {
+    transform: rotateY(-180deg);
+    z-index: 6;
+}
+
+#page5_checkbox:checked~#flip_book #page5 {
+    transform: rotateY(-180deg);
+    z-index: 9;
+}
+
+/* IMPROVED PHYSICAL BOOKMARK */
+.bookmark {
+    position: absolute !important; /* Changed from fixed */
+    top: -40px;
+    right: 30px;
+    width: 60px;
+    height: 190px;
+    background-color: crimson;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 110px;
+    transition: all 0.3s;
+   border: 1px solid rgba(0,0,0,0.2);
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    transform: rotateY(0deg) !important;
+    transition: none !important;
+    backface-visibility: visible !important;
+    
+}
+
+/* When book is closed - sticks out from cover */
+#flip_book:not(:has(#cover_checkbox:checked)) .bookmark {
+    top: -120px; /* Extends further when closed */
+    z-index: 300; /* Above front cover */
+       transform-style: preserve-3d; /* Maintain in 3D space */
+}
+
+/* Page-specific positioning */
+#page1 .bookmark { right: 30px; background: linear-gradient(...); }
+#page2 .bookmark { right: 40px; background: linear-gradient(...); }
+#page3 .bookmark { right: 50px; background: linear-gradient(...); }
+#page4 .bookmark { right: 60px; background: linear-gradient(...); }
+/* Add different colors per page */
+
+.bookmark:hover {
+     transform: translateY(-10px) rotateY(var(--current-rotation, 0deg)) !important;
+    box-shadow: 3px 0 8px rgba(0,0,0,0.3);
+}
+
+/* Flip and hide bookmark behind the page after flip is done */
+#page1_checkbox:checked ~ #flip_book #page1 .bookmark,
+#page2_checkbox:checked ~ #flip_book #page2 .bookmark,
+#page3_checkbox:checked ~ #flip_book #page3 .bookmark,
+#page4_checkbox:checked ~ #flip_book #page4 .bookmark,
+#page5_checkbox:checked ~ #flip_book #page5 .bookmark {
+    transform: rotateY(180deg) !important;
+    z-index: -1 !important;
+}
+
+
