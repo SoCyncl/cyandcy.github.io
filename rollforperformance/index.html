@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplayer Writing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📝 Multiplayer Writing Game</h1>
+
+  <div id="setup">
+    <button onclick="createRoom()">Create Room</button>
+    <input id="roomCodeInput" placeholder="Enter Room Code" />
+    <button onclick="joinRoom()">Join Room</button>
+  </div>
+
+  <div id="game" style="display:none;">
+    <h2>Room: <span id="roomDisplay"></span></h2>
+    <textarea id="entryBox" placeholder="Your turn! Write here..."></textarea>
+    <button onclick="submitEntry()">Submit</button>
+    <h3>Entries:</h3>
+    <ul id="entries"></ul>
+  </div>
+
+  <!-- Firebase (Compat Version) -->
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAWfMdxpfNWD31uWWCUWge2s0pXXFREy64",
+      authDomain: "edelith-47ffa.firebaseapp.com",
+      projectId: "edelith-47ffa",
+      storageBucket: "edelith-47ffa.appspot.com",
+      messagingSenderId: "650427014769",
+      appId: "1:650427014769:web:957d9fdb4f33734853c5d0",
+      measurementId: "G-TVXGLMKW16"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    window.db = db; // expose globally
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
